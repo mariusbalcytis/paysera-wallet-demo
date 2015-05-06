@@ -1,3 +1,4 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+maba_paysera_wallet_demo:
+    resource: "@MabaPayseraWalletDemoBundle/Resources/config/routing.xml"
+    prefix:   /
+
