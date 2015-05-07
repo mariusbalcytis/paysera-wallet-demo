@@ -5,11 +5,6 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="wallet_api" class="Paysera_WalletApi">
-            <argument>%wallet_api.client_id%</argument>
-            <argument>%wallet_api.secret%</argument>
-        </service>
-
         <service id="configuration_provider"
                  class="Maba\Bundle\PayseraWalletDemoBundle\Services\ConfigurationProvider">
             <argument>%kernel.cache_dir%</argument>

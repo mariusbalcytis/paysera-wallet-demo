@@ -71,3 +71,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+paysera_wallet:
+    client_id: %wallet_api.client_id%
+    secret: %wallet_api.secret%
