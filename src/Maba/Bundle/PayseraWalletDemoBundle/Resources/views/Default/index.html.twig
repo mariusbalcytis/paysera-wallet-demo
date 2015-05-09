@@ -1,1 +1,15 @@
-Hello {{ name }}!
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ config.email }}
+    {% for transaction in transactions %}
+        {{ dump(transaction) }}
+        {% if transaction.isStatusNew() %}
+            {% if forms[transaction.key] is defined %}
+                {{ form(forms[transaction.key]) }}
+            {% endif %}
+            <a href="https://www.paysera.com/frontend/wallet/confirm/{{ transaction.key }}">Confirm</a>
+            <img src="http://zxing.org/w/chart?cht=qr&chs=350x350&chld=L&choe=UTF-8&chl={{ ('PAYSERA%' ~ transaction.key)|url_encode }}"/>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
